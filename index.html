@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Señas del Tiempo - LSC</title>
+    <meta name="description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
+    <meta property="og:title" content="Señas del Tiempo - LSC">
+    <meta property="og:description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
+    <meta property="og:image" content="https://juegolsc.miguelposada.dev/preview.jpg">
+    <meta property="og:url" content="https://juegolsc.miguelposada.dev">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Señas del Tiempo - LSC">
+    <meta name="twitter:description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
+    <meta name="twitter:image" content="https://juegolsc.miguelposada.dev/preview.jpg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PANTALLA INICIO
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="pantalla-inicio" class="pantalla activa">
+        <div class="contenedor-inicio">
+            <div class="logo-animado">
+                <img src="favicon.svg" width="90" height="90" alt="Logo Señas del Tiempo">
+            </div>
+            <h1 class="titulo-principal">Señas del Tiempo</h1>
+            <p class="subtitulo">Aprende los dias, meses y mas vocabulario del tiempo en Lengua de Señas Colombiana</p>
+            <div class="decoracion">
+                <span class="circulo amarillo"></span>
+                <span class="circulo azul"></span>
+                <span class="circulo rojo"></span>
+            </div>
+            <button class="btn-principal" onclick="mostrarPantalla('aprende')">
+                <span>Comenzar</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+        <footer class="footer-app">
+            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
+        </footer>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PANTALLA APRENDE
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="pantalla-aprende" class="pantalla">
+        <header class="header-juego">
+            <button class="btn-volver" onclick="mostrarPantalla('inicio')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Inicio
+            </button>
+            <h2>Aprende el Vocabulario</h2>
+            <div class="espacio"></div>
+        </header>
+        <div class="contenedor-aprende">
+
+            <div class="seccion-tarjetas">
+                <h3 class="categoria-titulo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Dias de la Semana
+                </h3>
+                <div class="grid-tarjetas" id="grid-dias"></div>
+            </div>
+
+            <div class="seccion-tarjetas">
+                <h3 class="categoria-titulo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Meses del Año
+                </h3>
+                <div class="grid-tarjetas" id="grid-meses"></div>
+            </div>
+
+            <div class="seccion-tarjetas">
+                <h3 class="categoria-titulo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Mas Vocabulario del Tiempo
+                </h3>
+                <div class="grid-tarjetas" id="grid-mas"></div>
+            </div>
+
+            <div class="navegacion-juegos">
+                <p>Listo para jugar?</p>
+                <div class="botones-juegos">
+                    <button class="btn-juego" onclick="iniciarFrases()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                        Completa la Frase
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <footer class="footer-app">
+            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
+        </footer>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PANTALLA ZOOM / VISTA DETALLADA
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="pantalla-zoom" class="pantalla">
+        <header class="header-juego">
+            <button class="btn-volver" onclick="cerrarZoom()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Volver
+            </button>
+            <h2>Vista Detallada</h2>
+            <div class="espacio"></div>
+        </header>
+
+        <div class="contenedor-zoom">
+
+            <!-- Nombre -->
+            <h3 class="zoom-nombre" id="zoom-nombre"></h3>
+
+            <!-- DÚO: concepto (izquierda) + seña LSC (derecha) -->
+            <div class="zoom-imagenes-duo">
+
+                <!-- Imagen representativa del concepto -->
+                <div class="zoom-duo-card">
+                    <span class="zoom-duo-label zoom-label-concepto">📸 Concepto</span>
+                    <div class="zoom-concepto-wrapper">
+                        <img src="" alt="Imagen del concepto" id="zoom-concepto-img">
+                        <div class="zoom-concepto-placeholder" id="zoom-concepto-placeholder">🖼️</div>
+                    </div>
+                </div>
+
+                <!-- Imagen de la seña LSC -->
+                <div class="zoom-duo-card">
+                    <span class="zoom-duo-label zoom-label-sena">🤟 Seña LSC</span>
+                    <div class="zoom-imagen-wrapper">
+                        <img src="" alt="Seña ampliada" id="zoom-img">
+                        <div class="zoom-placeholder" id="zoom-placeholder">Imagen de seña</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Frase flotante -->
+            <div class="zoom-frase-flotante" id="zoom-frase"></div>
+
+            <!-- Navegación -->
+            <div class="zoom-navegacion">
+                <button class="btn-zoom-nav" onclick="zoomAnterior()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Anterior
+                </button>
+                <span class="zoom-contador" id="zoom-contador">1 / 7</span>
+                <button class="btn-zoom-nav" onclick="zoomSiguiente()">
+                    Siguiente
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+        <footer class="footer-app">
+            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
+        </footer>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PANTALLA FRASES
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="pantalla-frases" class="pantalla">
+        <header class="header-juego">
+            <button class="btn-volver" onclick="mostrarPantalla('aprende')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Aprende
+            </button>
+            <h2>Completa la Frase</h2>
+            <div class="puntuacion-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:middle;margin-right:4px">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <span id="puntos-frases">0</span>
+            </div>
+        </header>
+        <div class="contenedor-juego">
+            <div class="barra-progreso">
+                <div class="progreso-fill" id="progreso-frases"></div>
+                <span class="progreso-texto"><span id="frase-actual-num">1</span> / <span id="total-frases">10</span></span>
+            </div>
+            <div class="area-frase">
+                <p class="frase-texto" id="frase-texto"></p>
+                <p class="instruccion">Selecciona la seña que completa la frase</p>
+            </div>
+
+            <!-- Imagen del CONCEPTO (pista visual) -->
+            <div class="imagen-pregunta-frase">
+                <img src="" alt="Imagen del concepto" id="img-pregunta-frase">
+                <div class="placeholder-pregunta-frase" id="placeholder-pregunta-frase">Concepto</div>
+            </div>
+
+            <div class="opciones-frases" id="opciones-frases"></div>
+            <div class="feedback" id="feedback-frases"></div>
+        </div>
+        <footer class="footer-app">
+            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
+        </footer>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PANTALLA RESULTADOS
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="pantalla-resultados" class="pantalla">
+        <div class="contenedor-resultados">
+            <div class="icono-resultado" id="icono-resultado">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="8" r="7"/>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+            </div>
+            <h2 id="titulo-resultado">Excelente</h2>
+            <p id="mensaje-resultado">Conoces muy bien las señas</p>
+            <div class="estadisticas">
+                <div class="stat">
+                    <span class="stat-num" id="stat-correctas">0</span>
+                    <span class="stat-label">Correctas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" id="stat-total">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" id="stat-porcentaje">0%</span>
+                    <span class="stat-label">Precision</span>
+                </div>
+            </div>
+            <div class="acciones-resultado">
+                <button class="btn-principal" onclick="mostrarPantalla('aprende')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Volver a Aprender
+                </button>
+                <button class="btn-secundario" onclick="location.reload()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
+                        <polyline points="23 4 23 10 17 10"/>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                    </svg>
+                    Jugar de Nuevo
+                </button>
+            </div>
+        </div>
+        <footer class="footer-app footer-resultados">
+            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
+        </footer>
+        <canvas id="confetti-canvas"></canvas>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
