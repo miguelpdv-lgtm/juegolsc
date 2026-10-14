@@ -1,285 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Señas del Tiempo - LSC</title>
-    <meta name="description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
-    <meta property="og:title" content="Señas del Tiempo - LSC">
-    <meta property="og:description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
-    <meta property="og:image" content="https://juegolsc.miguelposada.dev/preview.jpg">
-    <meta property="og:url" content="https://juegolsc.miguelposada.dev">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Señas del Tiempo - LSC">
-    <meta name="twitter:description" content="Aprende los días, meses y más vocabulario del tiempo en Lengua de Señas Colombiana. ¡Con juegos interactivos!">
-    <meta name="twitter:image" content="https://juegolsc.miguelposada.dev/preview.jpg">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <base target="_blank">
-<base target="_blank">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Body Shop · Tattoo &amp; Piercing · Barranquilla</title>
+<meta name="description" content="The Body Shop Tattoo & Piercing Studio en Barranquilla: realismo a color, negro y gris y piercing. Cra. 43 #75B-187, El Porvenir.">
+<meta property="og:title" content="The Body Shop · Tattoo &amp; Piercing">
+<meta property="og:description" content="The Body Shop Tattoo & Piercing Studio en Barranquilla: realismo a color, negro y gris y piercing. Cra. 43 #75B-187, El Porvenir.">
+<meta property="og:image" content="https://juegolsc.miguelposada.dev/img/artista-premio.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090909">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,62..125,300..800&family=Grenze+Gotisch:wght@300..900&family=UnifrakturMaguntia&family=Spline+Sans+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/sistema.css">
+<link rel="stylesheet" href="css/heroes.css">
+<link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="tb-chrome-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".36" stop-color="#D9DBE2"/>
+      <stop offset=".5" stop-color="#6F727D"/>
+      <stop offset=".64" stop-color="#EEF0F4"/>
+      <stop offset="1" stop-color="#A3A6B1"/>
+    </linearGradient>
+    <linearGradient id="tb-gold-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1D58C"/>
+      <stop offset=".5" stop-color="#CFA650"/>
+      <stop offset="1" stop-color="#8E6B22"/>
+    </linearGradient>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         PANTALLA INICIO
-    ═══════════════════════════════════════════════════════════ -->
-    <section id="pantalla-inicio" class="pantalla activa">
-        <div class="contenedor-inicio">
-            <div class="logo-animado">
-                <img src="favicon.svg" width="90" height="90" alt="Logo Señas del Tiempo">
-            </div>
-            <h1 class="titulo-principal">Señas del Tiempo</h1>
-            <p class="subtitulo">Aprende los dias, meses y mas vocabulario del tiempo en Lengua de Señas Colombiana</p>
-            <div class="decoracion">
-                <span class="circulo amarillo"></span>
-                <span class="circulo azul"></span>
-                <span class="circulo rojo"></span>
-            </div>
-            <button class="btn-principal" onclick="mostrarPantalla('aprende')">
-                <span>Comenzar</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </button>
+    <!-- Filigrana dorada: rombo central y volutas simétricas -->
+    <symbol id="tb-filigrana" viewBox="0 0 120 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <g id="tb-fil-half">
+          <path d="M67 12c9 0 13-7 20-6 6 1 5 8 0 7-3-.6-2.4-4 .5-3.6"/>
+          <path d="M69 14.5c12 6 26 6 40-1.5"/>
+          <path d="M109 13c3-1.6 5-1 6 .4"/>
+          <path d="M92 17.5c2 2.5 5 3 7 1.6"/>
+        </g>
+        <use href="#tb-fil-half" transform="matrix(-1 0 0 1 120 0)"/>
+      </g>
+      <path d="M60 3.5l6 8.5-6 8.5-6-8.5z" fill="currentColor"/>
+    </symbol>
+
+    <!-- Cinta tricolor ondulada (proporción 2:1:1) -->
+    <symbol id="tb-ribbon" viewBox="0 0 320 52">
+      <path d="M6 22l22-6v26L6 46l8-12z" fill="#A88A0F"/>
+      <path d="M314 16l-22-2v26l22 2-8-12z" fill="#8E1422"/>
+      <g fill="none">
+        <path d="M24 18c44-20 88 16 136-2s92 16 136-2" stroke="#F5C518" stroke-width="12"/>
+        <path d="M24 26.75c44-20 88 16 136-2s92 16 136-2" stroke="#1E4FB8" stroke-width="5.5"/>
+        <path d="M24 32.25c44-20 88 16 136-2s92 16 136-2" stroke="#D21F33" stroke-width="5.5"/>
+      </g>
+    </symbol>
+
+    <!-- Logotipo completo: cinta, THE BODY Shop, aro y filigrana.
+         Color del rotulado por --logo-fill (cromo por defecto). -->
+    <symbol id="tb-lockup" viewBox="0 0 360 248">
+      <use href="#tb-ribbon" x="20" y="4" width="320" height="52"/>
+      <text x="180" y="92" text-anchor="middle" font-family="'Grenze Gotisch', 'UnifrakturMaguntia', serif" font-weight="600" font-size="26" letter-spacing="7" style="fill:var(--logo-fill, url(#tb-chrome-g))">THE</text>
+      <text x="180" y="166" text-anchor="middle" font-family="'Grenze Gotisch', 'UnifrakturMaguntia', serif" font-weight="800" font-size="92" letter-spacing="1" style="fill:var(--logo-fill, url(#tb-chrome-g))">BODY</text>
+      <text x="314" y="214" text-anchor="end" font-family="'Grenze Gotisch', 'UnifrakturMaguntia', serif" font-weight="500" font-size="38" style="fill:var(--logo-fill, url(#tb-chrome-g))">Shop</text>
+      <g fill="none" style="stroke:var(--logo-fill, url(#tb-chrome-g))" stroke-width="3.6">
+        <circle cx="155" cy="171" r="11.5"/>
+      </g>
+      <circle cx="155" cy="183" r="4.6" style="fill:var(--logo-gold, url(#tb-gold-g))"/>
+      <use href="#tb-filigrana" x="105" y="218" width="130" height="26" style="color: var(--logo-gold-solid, #CFA650)"/>
+    </symbol>
+
+    <!-- Monograma: B gótica con aro y cinta -->
+    <symbol id="tb-mono" viewBox="0 0 100 100">
+      <rect width="100" height="100" style="fill:var(--mono-bg, #0C0B10)"/>
+      <rect x="0" y="0" width="100" height="7" fill="#F5C518"/>
+      <rect x="0" y="7" width="100" height="3.5" fill="#1E4FB8"/>
+      <rect x="0" y="10.5" width="100" height="3.5" fill="#D21F33"/>
+      <text x="47" y="84" text-anchor="middle" font-family="'Grenze Gotisch', 'UnifrakturMaguntia', serif" font-weight="800" font-size="78" style="fill:var(--mono-fill, url(#tb-chrome-g))">B</text>
+      <circle cx="74" cy="72" r="9.5" fill="none" style="stroke:var(--mono-fill, url(#tb-chrome-g))" stroke-width="3"/>
+      <circle cx="74" cy="82" r="3.6" fill="#CFA650"/>
+    </symbol>
+
+    <!-- Iconos de línea (24×24, trazo 1.6) -->
+    <symbol id="i-maquina" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="6" rx="1"/><path d="M9.5 9v4.5h5V9M12 13.5V18M12 18l-1 3h2z"/><path d="M16 5h3"/></g></symbol>
+    <symbol id="i-aro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="11" r="7"/></g><circle cx="12" cy="18.5" r="2.6" fill="currentColor"/></symbol>
+    <symbol id="i-daga" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.2 3.5v9h-4.4V6z"/><path d="M6.5 15h11M12 15v4.5"/><circle cx="12" cy="21" r="1.4"/></g></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+    <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3c-4 6-6 9-6 12a6 6 0 0 0 12 0c0-3-2-6-6-12z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-reloj" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></g></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-trofeo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7l-1-3h-5z"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.5 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-1.8-1-1 .9c-1-.4-2-1.4-2.4-2.4l.9-1-1-1.8z"/></g></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="i-luna" viewBox="0 0 24 24"><path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-lados" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+
+<div class="lp-proposal"><div class="tb-wrap">Propuesta de diseño no oficial para The Body Shop · preparada por <a href="https://miguelposada.dev">miguelposada.dev</a></div></div>
+
+
+<header class="lp-header">
+  <div class="tb-wrap">
+    <nav class="tb-nav" aria-label="Principal">
+      <a class="lp-brand" href="#inicio">
+        <svg aria-hidden="true"><use href="#tb-mono"/></svg>
+        <span><b>The Body Shop</b><small>Tattoo &amp; Piercing</small></span>
+      </a>
+      <div class="tb-nav__links">
+        <a href="#trabajos">Trabajos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#piercing">Piercing</a>
+        <a href="#cuidados">Cuidados</a>
+        <a href="#estudio">Estudio</a>
+      </div>
+      <div class="lp-header__end">
+        <button class="lp-theme" type="button" id="theme-btn" aria-label="Cambiar a tema claro"><svg aria-hidden="true"><use href="#i-sol"/></svg></button>
+        <a class="tb-btn tb-btn--sm" href="https://wa.me/message/UXP43RGK2EU6G1">Reservar</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- =============================== Héroe ===============================
+     "Retrato" (ref. Shamrock Social Club): el nombre del estudio es el titular. -->
+<section class="lp-hero" id="inicio"><div class="hx-wrap" id="hero"></div></section>
+
+<div class="lp-promo">
+  <div class="tb-wrap"><b>2×1</b><a href="#piercing" style="font-weight:600;text-decoration:none">en todos los piercing · 13 al 31 de octubre</a><a href="#piercing">Ver condiciones</a></div>
+</div>
+
+<div class="lp-band" aria-label="Estilos que trabajamos">
+  <div class="lp-band__track">
+    <span class="lp-band__item">Realismo color <svg aria-hidden="true"><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item">Negro y gris <svg aria-hidden="true"><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item">Mitología <svg aria-hidden="true"><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item">Retrato <svg aria-hidden="true"><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item">Lettering <svg aria-hidden="true"><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item">Body piercing <svg aria-hidden="true"><use href="#i-aro"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Realismo color <svg><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Negro y gris <svg><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Mitología <svg><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Retrato <svg><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Lettering <svg><use href="#i-daga"/></svg></span>
+    <span class="lp-band__item" aria-hidden="true">Body piercing <svg><use href="#i-aro"/></svg></span>
+  </div>
+</div>
+
+<!-- ============================== Trabajos ============================== -->
+<section class="lp-section" id="trabajos">
+  <div class="tb-wrap">
+    <div class="lp-head">
+      <div><span class="tb-eyebrow">Trabajos recientes</span><h2>Piezas que se ganan una segunda mirada</h2></div>
+      <p>Del boceto a la última sombra, cada pieza se diseña para la zona y la persona que la lleva. Algunas piezas recientes del estudio.</p>
+    </div>
+    <div class="lp-filters" role="group" aria-label="Filtrar trabajos">
+      <button class="tb-chip" type="button" aria-pressed="true" data-filter="todo">Todo</button>
+      <button class="tb-chip" type="button" aria-pressed="false" data-filter="color"><span class="tb-chip__dot"></span>Realismo color</button>
+      <button class="tb-chip" type="button" aria-pressed="false" data-filter="bng"><span class="tb-chip__dot"></span>Negro y gris</button>
+      <button class="tb-chip" type="button" aria-pressed="false" data-filter="premio"><span class="tb-chip__dot"></span>Premios</button>
+    </div>
+    <div class="lp-works" id="works">
+      <figure class="lp-work lp-work--a" data-tags="color premio">
+        <span class="tb-badge tb-badge--solid">1º lugar</span>
+        <img src="img/ghost-realismo-color.jpg" alt="Tatuaje a color de un soldado con máscara de calavera y rifle con láser">
+        <figcaption><b>Ghost</b><span>Realismo color · pantorrilla · Expo Atlántico</span></figcaption>
+      </figure>
+      <figure class="lp-work lp-work--b" data-tags="bng">
+        <img src="img/olimpo-negro-gris.jpg" alt="Tatuaje en negro y gris de Zeus con el Coliseo y un gladiador">
+        <figcaption><b>Olimpo y Roma</b><span>Negro y gris · pierna · @carlosflorestattoo</span></figcaption>
+      </figure>
+      <figure class="lp-work lp-work--c" data-tags="premio color">
+        <img src="img/expo-atlantico.jpg" alt="El artista con el trofeo de primer lugar junto a la pieza ganadora">
+      </figure>
+    </div>
+    <p class="lp-works__note">Más trabajos en <a href="https://www.instagram.com/tbs_colombia/">@tbs_colombia</a>.</p>
+  </div>
+</section>
+
+<!-- ============================== Proceso ============================== -->
+<section class="lp-section lp-section--alt" id="proceso">
+  <div class="tb-wrap">
+    <div class="lp-head">
+      <div><span class="tb-eyebrow">Cómo trabajamos</span><h2>Del stencil a la piel</h2></div>
+      <p>Antes del primer golpe de aguja, tu pieza ya pasó por el lápiz y por el papel de transferencia. Desliza la imagen para ver los dos momentos.</p>
+    </div>
+    <div class="lp-process">
+      <figure>
+        <div class="tb-stencil" data-stencil data-sweep>
+          <canvas aria-hidden="true"></canvas>
+          <img src="img/olimpo-negro-gris.jpg" alt="Tatuaje terminado de Zeus en negro y gris">
+          <span class="tb-stencil__line" aria-hidden="true"></span>
+          <span class="tb-stencil__tag tb-stencil__tag--l" aria-hidden="true">Stencil</span>
+          <span class="tb-stencil__tag tb-stencil__tag--r" aria-hidden="true">Tinta</span>
+          <input type="range" min="0" max="100" value="50" id="process-split" aria-label="Deslizar entre stencil y tatuaje terminado">
+          <span class="tb-stencil__knob" aria-hidden="true"><svg><use href="#i-lados"/></svg></span>
         </div>
-        <footer class="footer-app">
-            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
-        </footer>
-    </section>
+        <figcaption>Stencil generado a partir de la foto de la pieza terminada.</figcaption>
+      </figure>
+      <ol class="lp-steps">
+        <li class="lp-step"><div><h3>Consulta</h3><p>Escríbenos por WhatsApp con tu idea, la zona y una medida aproximada. Las referencias ayudan mucho.</p><span class="tb-mono">Respuesta en horario de estudio</span></div></li>
+        <li class="lp-step"><div><h3>Diseño propio</h3><p>El artista dibuja tu pieza desde cero. No copiamos tatuajes de otras personas: tomamos tus referencias como punto de partida.</p></div></li>
+        <li class="lp-step"><div><h3>Stencil y ajuste</h3><p>Transferimos el diseño a la piel y lo movemos las veces que haga falta hasta que siga la forma del músculo.</p><span class="tb-mono">Tú apruebas antes de empezar</span></div></li>
+        <li class="lp-step"><div><h3>Sesión</h3><p>Material estéril y de un solo uso, abierto frente a ti. Las piezas grandes se trabajan en varias sesiones.</p><span class="tb-mono">3RL · 7RL · 11RM · 15RM</span></div></li>
+        <li class="lp-step"><div><h3>Cuidados</h3><p>Sales con las indicaciones por escrito y seguimos pendientes de tu cicatrización por WhatsApp.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         PANTALLA APRENDE
-    ═══════════════════════════════════════════════════════════ -->
-    <section id="pantalla-aprende" class="pantalla">
-        <header class="header-juego">
-            <button class="btn-volver" onclick="mostrarPantalla('inicio')">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Inicio
-            </button>
-            <h2>Aprende el Vocabulario</h2>
-            <div class="espacio"></div>
-        </header>
-        <div class="contenedor-aprende">
-
-            <div class="seccion-tarjetas">
-                <h3 class="categoria-titulo">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                    Dias de la Semana
-                </h3>
-                <div class="grid-tarjetas" id="grid-dias"></div>
-            </div>
-
-            <div class="seccion-tarjetas">
-                <h3 class="categoria-titulo">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                    Meses del Año
-                </h3>
-                <div class="grid-tarjetas" id="grid-meses"></div>
-            </div>
-
-            <div class="seccion-tarjetas">
-                <h3 class="categoria-titulo">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                    Mas Vocabulario del Tiempo
-                </h3>
-                <div class="grid-tarjetas" id="grid-mas"></div>
-            </div>
-
-            <div class="navegacion-juegos">
-                <p>Listo para jugar?</p>
-                <div class="botones-juegos">
-                    <button class="btn-juego" onclick="iniciarFrases()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                        </svg>
-                        Completa la Frase
-                    </button>
-                </div>
-            </div>
-
+<!-- ============================== Piercing ============================== -->
+<section class="lp-section" id="piercing">
+  <div class="tb-wrap">
+    <div class="lp-head">
+      <div><span class="tb-eyebrow">Body piercing</span><h2>Escoge la zona, te decimos el resto</h2></div>
+      <p>Perforamos con aguja estéril, nunca con pistola. Toca una zona para ver el calibre de la joya y el tiempo aproximado de cicatrización.</p>
+    </div>
+    <div class="lp-pierce">
+      <div class="lp-offer">
+        <span class="tb-eyebrow">Especial de Halloween · 13 al 31 de octubre</span>
+        <div><div class="lp-offer__big">2×1</div><p>En todos los piercing durante octubre, para premiar a quienes nos siguen.</p></div>
+        <div>
+          <ol><li>Etiqueta a un amigo en el post de la promo.</li><li>Comparte el post en tus historias y etiquétanos.</li><li>Muestra el pantallazo al llegar.</li></ol>
         </div>
-        <footer class="footer-app">
-            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
-        </footer>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         PANTALLA ZOOM / VISTA DETALLADA
-    ═══════════════════════════════════════════════════════════ -->
-    <section id="pantalla-zoom" class="pantalla">
-        <header class="header-juego">
-            <button class="btn-volver" onclick="cerrarZoom()">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Volver
-            </button>
-            <h2>Vista Detallada</h2>
-            <div class="espacio"></div>
-        </header>
-
-        <div class="contenedor-zoom">
-
-            <!-- Nombre -->
-            <h3 class="zoom-nombre" id="zoom-nombre"></h3>
-
-            <!-- DÚO: concepto (izquierda) + seña LSC (derecha) -->
-            <div class="zoom-imagenes-duo">
-
-                <!-- Imagen representativa del concepto -->
-                <div class="zoom-duo-card">
-                    <span class="zoom-duo-label zoom-label-concepto">📸 Concepto</span>
-                    <div class="zoom-concepto-wrapper">
-                        <img src="" alt="Imagen del concepto" id="zoom-concepto-img">
-                        <div class="zoom-concepto-placeholder" id="zoom-concepto-placeholder">🖼️</div>
-                    </div>
-                </div>
-
-                <!-- Imagen de la seña LSC -->
-                <div class="zoom-duo-card">
-                    <span class="zoom-duo-label zoom-label-sena">🤟 Seña LSC</span>
-                    <div class="zoom-imagen-wrapper">
-                        <img src="" alt="Seña ampliada" id="zoom-img">
-                        <div class="zoom-placeholder" id="zoom-placeholder">Imagen de seña</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Frase flotante -->
-            <div class="zoom-frase-flotante" id="zoom-frase"></div>
-
-            <!-- Navegación -->
-            <div class="zoom-navegacion">
-                <button class="btn-zoom-nav" onclick="zoomAnterior()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Anterior
-                </button>
-                <span class="zoom-contador" id="zoom-contador">1 / 7</span>
-                <button class="btn-zoom-nav" onclick="zoomSiguiente()">
-                    Siguiente
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
-            </div>
-
+        <a class="tb-btn tb-btn--dark" href="https://wa.me/message/UXP43RGK2EU6G1">Separar mi cupo</a>
+        <small>Aplican términos y condiciones.</small>
+      </div>
+      <div class="lp-zones">
+        <div class="lp-zone-picker" id="zone-picker" role="group" aria-label="Zona del piercing"></div>
+        <div class="lp-zone" aria-live="polite">
+          <div><h3 id="z-name">Hélix</h3><p class="lp-zone__desc" id="z-desc"></p></div>
+          <div class="lp-zone__ring" aria-hidden="true"><i id="z-ring"></i></div>
+          <dl>
+            <div><dt>Calibre</dt><dd id="z-gauge"></dd></div>
+            <div><dt>Cicatriza</dt><dd id="z-heal"></dd></div>
+            <div><dt>Joya inicial</dt><dd id="z-jewel"></dd></div>
+          </dl>
         </div>
-        <footer class="footer-app">
-            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
-        </footer>
-    </section>
+        <p class="lp-zone__note">Tiempos de referencia. Cada cuerpo cicatriza a su ritmo; en la cita revisamos tu anatomía y te confirmamos la joya.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         PANTALLA FRASES
-    ═══════════════════════════════════════════════════════════ -->
-    <section id="pantalla-frases" class="pantalla">
-        <header class="header-juego">
-            <button class="btn-volver" onclick="mostrarPantalla('aprende')">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Aprende
-            </button>
-            <h2>Completa la Frase</h2>
-            <div class="puntuacion-header">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:middle;margin-right:4px">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-                <span id="puntos-frases">0</span>
-            </div>
-        </header>
-        <div class="contenedor-juego">
-            <div class="barra-progreso">
-                <div class="progreso-fill" id="progreso-frases"></div>
-                <span class="progreso-texto"><span id="frase-actual-num">1</span> / <span id="total-frases">10</span></span>
-            </div>
-            <div class="area-frase">
-                <p class="frase-texto" id="frase-texto"></p>
-                <p class="instruccion">Selecciona la seña que completa la frase</p>
-            </div>
+<!-- =============================== Premio =============================== -->
+<section class="lp-section lp-section--alt" id="premio">
+  <div class="tb-wrap lp-award">
+    <figure class="lp-award__photo"><img src="img/artista-premio.jpg" alt="El artista sonríe con el trofeo de primer lugar junto a la pierna tatuada del cliente"></figure>
+    <div class="lp-award__copy">
+      <span class="tb-eyebrow">Expo Atlántico · Tattoo Festival</span>
+      <h2>Primer lugar en realismo color</h2>
+      <figure class="tb-quote" style="margin:0">
+        <blockquote>Hay experiencias que te recuerdan por qué empezaste y te dan más razones para seguir.</blockquote>
+        <figcaption>El artista ganador, en el post del premio</figcaption>
+      </figure>
+      <p style="color: var(--fg-muted)">Horas de trabajo, nervios y aprendizaje frente a artistas de toda la región. El mismo nivel de detalle que llevamos a la convención es el que recibes en el estudio.</p>
+      <div class="lp-award__stats">
+        <div><b>1º</b><small>Realismo color</small></div>
+        <div><b>145</b><small>Publicaciones</small></div>
+        <div><b>5.0</b><small>En Google</small></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Imagen del CONCEPTO (pista visual) -->
-            <div class="imagen-pregunta-frase">
-                <img src="" alt="Imagen del concepto" id="img-pregunta-frase">
-                <div class="placeholder-pregunta-frase" id="placeholder-pregunta-frase">Concepto</div>
-            </div>
+<!-- ============================== Cuidados ============================== -->
+<section class="lp-section" id="cuidados">
+  <div class="tb-wrap lp-care">
+    <div class="lp-care__intro">
+      <span class="tb-eyebrow">Después de la cita</span>
+      <h2>Una pieza bien cuidada dura toda la vida</h2>
+      <p>La mitad del resultado pasa en casa. Estos son los cuidados que te explicamos al salir del estudio.</p>
+      <div class="tb-seg" role="group" aria-label="Tipo de cuidado">
+        <button type="button" aria-pressed="true" data-care="tattoo">Tatuaje</button>
+        <button type="button" aria-pressed="false" data-care="piercing">Piercing</button>
+      </div>
+    </div>
+    <div class="lp-care__panel">
+      <ul class="tb-care" id="care-tattoo">
+        <li><b>Primeras 4 h</b><span>Retira el film, lava con agua tibia y jabón neutro sin frotar y seca con toques de papel limpio.</span></li>
+        <li><b>Días 1 a 3</b><span>Capa fina de crema cicatrizante dos o tres veces al día. La piel debe respirar.</span></li>
+        <li><b>Semanas 1 y 2</b><span>Nada de piscina, mar, sauna ni sol directo. No rasques ni arranques la descamación.</span></li>
+        <li><b>Mes 1</b><span>Hidrata a diario. Cuando cierre del todo, usa bloqueador para que el color dure.</span></li>
+        <li><b>Retoque</b><span>Si algún punto pierde tinta al cicatrizar, escríbenos y lo revisamos.</span></li>
+      </ul>
+      <ul class="tb-care" id="care-piercing" hidden>
+        <li><b>A diario</b><span>Limpia dos veces al día con solución salina estéril. Sin alcohol ni agua oxigenada.</span></li>
+        <li><b>Sin tocar</b><span>No gires ni muevas la joya. Lávate las manos antes de cualquier limpieza.</span></li>
+        <li><b>4 semanas</b><span>Evita piscina, mar y maquillaje sobre la zona. En oreja, no duermas sobre ese lado.</span></li>
+        <li><b>Cambio de joya</b><span>Solo cuando esté cicatrizado. Pásate por el estudio y te ayudamos a cambiarla por una más corta.</span></li>
+        <li><b>Alerta</b><span>Calor, dolor que aumenta o secreción verde no son normales: escríbenos y ve al médico.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-            <div class="opciones-frases" id="opciones-frases"></div>
-            <div class="feedback" id="feedback-frases"></div>
+<!-- ============================== Estudio ============================== -->
+<section class="lp-section lp-section--alt" id="estudio">
+  <div class="tb-wrap">
+    <div class="lp-head">
+      <div><span class="tb-eyebrow">Visítanos</span><h2>El estudio, en El Porvenir</h2></div>
+      <p>Abrimos de lunes a sábado. Escríbenos antes de venir para confirmar disponibilidad en la agenda del día.</p>
+    </div>
+    <div class="lp-visit">
+      <div class="lp-ticket">
+        <h3>The Body Shop Tattoo &amp; Piercing Studio</h3>
+        <address>Cra. 43 #75B-187, local 5-6<small>El Porvenir · Barranquilla, Atlántico</small></address>
+        <div class="lp-hours" id="hours">
+          <div data-d="1"><span>Lunes</span><span>11:00–20:00</span></div>
+          <div data-d="2"><span>Martes</span><span>11:00–20:00</span></div>
+          <div data-d="3"><span>Miércoles</span><span>11:00–20:00</span></div>
+          <div data-d="4"><span>Jueves</span><span>11:00–20:00</span></div>
+          <div data-d="5"><span>Viernes</span><span>11:00–20:00</span></div>
+          <div data-d="6"><span>Sábado</span><span>11:00–20:00</span></div>
+          <div data-d="0"><span>Domingo</span><span>Cerrado</span></div>
         </div>
-        <footer class="footer-app">
-            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
-        </footer>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         PANTALLA RESULTADOS
-    ═══════════════════════════════════════════════════════════ -->
-    <section id="pantalla-resultados" class="pantalla">
-        <div class="contenedor-resultados">
-            <div class="icono-resultado" id="icono-resultado">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="12" cy="8" r="7"/>
-                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-                </svg>
-            </div>
-            <h2 id="titulo-resultado">Excelente</h2>
-            <p id="mensaje-resultado">Conoces muy bien las señas</p>
-            <div class="estadisticas">
-                <div class="stat">
-                    <span class="stat-num" id="stat-correctas">0</span>
-                    <span class="stat-label">Correctas</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-num" id="stat-total">0</span>
-                    <span class="stat-label">Total</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-num" id="stat-porcentaje">0%</span>
-                    <span class="stat-label">Precision</span>
-                </div>
-            </div>
-            <div class="acciones-resultado">
-                <button class="btn-principal" onclick="mostrarPantalla('aprende')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Volver a Aprender
-                </button>
-                <button class="btn-secundario" onclick="location.reload()">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px">
-                        <polyline points="23 4 23 10 17 10"/>
-                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-                    </svg>
-                    Jugar de Nuevo
-                </button>
-            </div>
+      </div>
+      <div class="lp-contact">
+        <div class="lp-rating"><b>5.0</b><p><span class="tb-stars" aria-label="5 de 5 estrellas">★★★★★</span><br>134 reseñas en Google Maps</p></div>
+        <div class="lp-links">
+          <a class="lp-link" href="https://wa.me/message/UXP43RGK2EU6G1"><svg aria-hidden="true"><use href="#i-chat"/></svg><span><b>Reservar por WhatsApp</b><small>Cotización con foto de referencia y medida</small></span><svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+          <a class="lp-link" href="https://www.google.com/maps/search/?api=1&amp;query=10.9946361,-74.812525"><svg aria-hidden="true"><use href="#i-pin"/></svg><span><b>Cómo llegar</b><small>Abrir en Google Maps</small></span><svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+          <a class="lp-link" href="https://www.instagram.com/tbs_colombia/"><svg aria-hidden="true"><use href="#i-ig"/></svg><span><b>@tbs_colombia</b><small>Trabajos, promos e historias</small></span><svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
         </div>
-        <footer class="footer-app footer-resultados">
-            <a href="https://miguelposada.dev" target="_blank">Miguel Posada</a> &copy; 2026
-        </footer>
-        <canvas id="confetti-canvas"></canvas>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- ============================= Preguntas ============================= -->
+<section class="lp-section" id="preguntas">
+  <div class="tb-wrap">
+    <div class="lp-head">
+      <div><span class="tb-eyebrow">Antes de tu cita</span><h2>Preguntas frecuentes</h2></div>
+      <p>Si tu duda no está aquí, escríbenos por WhatsApp y te responde alguien del estudio.</p>
+    </div>
+    <div class="lp-faq">
+      <details open><summary>¿Cuánto cuesta un tatuaje?</summary><p>Depende del tamaño, la zona, el estilo y las horas de trabajo. Envíanos tu idea, una foto de la zona y la medida aproximada en centímetros y te damos una cotización sin compromiso.</p></details>
+      <details><summary>¿Puedo llevar mi propio diseño?</summary><p>Claro. Lo usamos como base y el artista lo adapta a tu cuerpo para que se vea bien con el tiempo. Si es un tatuaje de otra persona, hacemos una versión propia en lugar de copiarlo.</p></details>
+      <details><summary>¿Cuánto dura una sesión de realismo?</summary><p>Una pieza mediana de realismo suele tomar entre 4 y 6 horas. Las piezas grandes, como una pantorrilla o un brazo completo, se dividen en varias sesiones.</p></details>
+      <details><summary>¿Duele?</summary><p>Sí, algo. Depende de la zona y de cada persona. Hacemos pausas cuando las necesites y te explicamos qué esperar antes de empezar.</p></details>
+      <details><summary>¿Cómo aplica el 2×1 en piercing?</summary><p>Del 13 al 31 de octubre. Etiqueta a un amigo en el post de la promo, compártelo en tus historias etiquetando a @tbs_colombia y muestra el pantallazo al llegar. Aplican términos y condiciones.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CTA final ============================= -->
+<section class="lp-cta">
+  <div class="tb-wrap">
+    <div class="lp-cta__logo"><svg class="lock" viewBox="0 0 360 248" role="img" aria-label="The Body Shop"><use href="#tb-lockup"/></svg></div>
+    <h2>¿Ya sabes qué te vas a hacer?</h2>
+    <p>Cuéntanos la idea. Nosotros la llevamos al papel, al stencil y a la piel.</p>
+    <a class="tb-btn" href="https://wa.me/message/UXP43RGK2EU6G1">Escribir por WhatsApp <svg aria-hidden="true"><use href="#i-chat"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="lp-footer">
+  <div class="tb-wrap">
+    <span>The Body Shop Tattoo &amp; Piercing Studio · Cra. 43 #75B-187, local 5-6, Barranquilla</span>
+    <span>Propuesta de diseño por <a href="https://miguelposada.dev">miguelposada.dev</a> · 2026</span>
+  </div>
+</footer>
+
+<script src="js/stencil.js"></script>
+<script src="js/heroes.js"></script>
+<script src="js/inicio.js"></script>
 </body>
 </html>
