@@ -3,6 +3,7 @@
 Propuesta de página de inicio para The Body Shop Tattoo & Piercing Studio
 (Cra. 43 #75B-187, El Porvenir, Barranquilla · [@tbs_colombia](https://www.instagram.com/tbs_colombia/)).
 Sitio estático sin dependencias ni paso de compilación: se sirve tal cual.
+En producción: https://thebodytattoo.vercel.app
 
 ```
 index.html          página
