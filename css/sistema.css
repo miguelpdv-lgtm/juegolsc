@@ -1,0 +1,413 @@
+/* ==========================================================================
+   THE BODY SHOP · Design tokens
+   Concepto: "Tinta y cromo". La paleta sale del logo del estudio: letras
+   góticas de cromo sobre negro, cinta tricolor de Colombia y filigrana dorada.
+   El tema oscuro es la tinta; el claro es el papel de transferencia del
+   stencil, con sus líneas violeta.
+   Layout: columna de 74rem enmarcada como una hoja de flash, con filetes
+   finos y esquinas cortadas.
+   ========================================================================== */
+
+:root {
+  /* ---- Paleta base (marca) ---------------------------------------------- */
+  --tb-tinta:       #0C0B10;  /* negro de tinta, sesgo violeta */
+  --tb-carbon:      #16141C;
+  --tb-humo:        #221F2A;
+  --tb-cromo:       #D6D8DF;  /* letras del logo */
+  --tb-acero:       #8E919C;
+  --tb-oro:         #CFA650;  /* filigrana */
+  --tb-oro-hondo:   #7A5A14;  /* oro legible sobre papel */
+  --tb-stencil:     #7B5CE0;  /* tinta de transferencia */
+  --tb-stencil-hondo:#4B2FA6;
+  --tb-papel:       #EFEDF3;  /* papel de transferencia */
+  --tb-piel:        #E3BE9F;
+  --tb-transfer:    #F7F5FB;  /* papel del stencil generado, igual en ambos temas */
+  /* Cinta tricolor: proporción 2:1:1, como la bandera */
+  --tb-amarillo:    #F5C518;
+  --tb-azul:        #1E4FB8;
+  --tb-rojo:        #D21F33;
+
+  /* ---- Roles semánticos (tema oscuro: tinta) ---------------------------- */
+  --bg:          var(--tb-tinta);
+  --surface:     var(--tb-carbon);
+  --surface-2:   var(--tb-humo);
+  --fg:          #CFCDD6;
+  --fg-strong:   #F4F3F7;
+  --fg-muted:    #8F8B9C;
+  --line:        #2E2A37;
+  --line-strong: #4A4556;
+  --accent:      var(--tb-oro);       /* texto y filetes de acento */
+  --accent-fg:   var(--tb-tinta);
+  --accent-soft: #3A2F18;
+  --stencil:     var(--tb-stencil);
+  --stencil-soft:#241B3F;
+  --paper:       #EDEAF2;            /* fondo del stencil generado */
+  --chrome:      linear-gradient(180deg, #FFFFFF 0%, #D9DBE2 34%, #6F727D 50%, #EEF0F4 64%, #A3A6B1 100%);
+  --focus:       var(--tb-oro);
+  --ok:          #6CCB95;
+  --alert:       #FF7A85;
+  --glow:        207 166 80;         /* rgb del oro para brillos */
+  --shade:       0 0 0;
+  color-scheme: dark;
+
+  /* ---- Tipografía ------------------------------------------------------- */
+  --font-display: "Grenze Gotisch", "UnifrakturMaguntia", "Old English Text MT", "Times New Roman", serif;
+  --font-body:    "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono:    "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Escala 1.333 (cuarta justa) sobre 1rem */
+  --fs-xs:   0.78rem;
+  --fs-sm:   0.9rem;
+  --fs-base: 1rem;
+  --fs-md:   1.2rem;
+  --fs-lg:   1.5rem;
+  --fs-xl:   2rem;
+  --fs-2xl:  2.66rem;
+  --fs-3xl:  clamp(2.4rem, 6vw, 3.55rem);
+  --fs-4xl:  clamp(2.8rem, 8vw, 4.73rem);
+  --fs-5xl:  clamp(3.4rem, 13vw, 8.4rem);
+  --lh-tight: .92;
+  --lh-snug:  1.15;
+  --lh-body:  1.6;
+  --tracking-label: .16em;
+
+  /* ---- Espaciado (base 4, nombrado por calibre de aguja) ---------------- */
+  --sp-1: .25rem;   /* 1RL */
+  --sp-2: .5rem;    /* 3RL */
+  --sp-3: .75rem;   /* 5RL */
+  --sp-4: 1rem;     /* 7RL */
+  --sp-5: 1.5rem;   /* 9RS */
+  --sp-6: 2rem;     /* 11RM */
+  --sp-7: 3rem;     /* 15RM */
+  --sp-8: 4rem;     /* 23RM */
+  --sp-9: 6rem;
+
+  /* ---- Formas: placas con esquina cortada ------------------------------- */
+  --r-filo:  2px;
+  --r-placa: 4px;
+  --cut:     12px;   /* esquina cortada de botones y placas */
+  --cut-lg:  22px;
+
+  /* ---- Sombras y brillos ------------------------------------------------ */
+  --sh-1: 0 1px 0 rgb(255 255 255 / .04) inset, 0 2px 10px rgb(var(--shade) / .35);
+  --sh-2: 0 18px 50px -18px rgb(var(--shade) / .7);
+  --sh-oro: 0 0 0 1px rgb(var(--glow) / .5), 0 10px 40px -10px rgb(var(--glow) / .45);
+
+  /* ---- Movimiento ------------------------------------------------------- */
+  --dur-pulso:  90ms;    /* un golpe de aguja */
+  --dur-trazo:  520ms;   /* transiciones de UI */
+  --dur-sesion: 1600ms;  /* dibujos de stencil y entradas */
+  --ease-aguja: cubic-bezier(.2, .8, .2, 1);   /* entra firme y se asienta */
+  --ease-tinta: cubic-bezier(.65, 0, .35, 1);  /* simétrica, para rellenos */
+  --ease-latido: cubic-bezier(.3, 1.6, .5, 1); /* micro rebote de sello */
+
+  --container: 74rem;
+  --measure: 64ch;
+}
+
+/* ---- Tema claro: papel de transferencia ------------------------------- */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:          var(--tb-papel);
+    --surface:     #FFFFFF;
+    --surface-2:   #E4E0EC;
+    --fg:          #2B2833;
+    --fg-strong:   #0C0B10;
+    --fg-muted:    #5F5A6C;
+    --line:        #D3CEDD;
+    --line-strong: #A7A0B6;
+    --accent:      var(--tb-oro-hondo);
+    --accent-fg:   #FFFFFF;
+    --accent-soft: #F1E5C6;
+    --stencil:     var(--tb-stencil-hondo);
+    --stencil-soft:#E3DBF7;
+    --paper:       #FFFFFF;
+    --chrome:      linear-gradient(180deg, #4A4656 0%, #0C0B10 45%, #2B2833 62%, #0C0B10 100%);
+    --focus:       var(--tb-stencil-hondo);
+    --ok:          #1F7A4A;
+    --alert:       #B3162B;
+    --glow:        122 90 20;
+    --shade:       40 30 70;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg:          var(--tb-papel);
+  --surface:     #FFFFFF;
+  --surface-2:   #E4E0EC;
+  --fg:          #2B2833;
+  --fg-strong:   #0C0B10;
+  --fg-muted:    #5F5A6C;
+  --line:        #D3CEDD;
+  --line-strong: #A7A0B6;
+  --accent:      var(--tb-oro-hondo);
+  --accent-fg:   #FFFFFF;
+  --accent-soft: #F1E5C6;
+  --stencil:     var(--tb-stencil-hondo);
+  --stencil-soft:#E3DBF7;
+  --paper:       #FFFFFF;
+  --chrome:      linear-gradient(180deg, #4A4656 0%, #0C0B10 45%, #2B2833 62%, #0C0B10 100%);
+  --focus:       var(--tb-stencil-hondo);
+  --ok:          #1F7A4A;
+  --alert:       #B3162B;
+  --glow:        122 90 20;
+  --shade:       40 30 70;
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--fg-strong); font-weight: 600; line-height: var(--lh-snug); margin: 0; text-wrap: balance; letter-spacing: .005em; }
+p { margin: 0; text-wrap: pretty; }
+a { color: var(--accent); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+::selection { background: var(--stencil); color: #fff; }
+img { display: block; }
+
+.tb-wrap {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 700px) { .tb-wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+/* Texto cromado: el tratamiento de las letras del logo */
+.tb-chrome {
+  background: var(--chrome);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Etiquetas ---------------------------------------------------------- */
+.tb-eyebrow {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font: 600 var(--fs-xs)/1.2 var(--font-body);
+  font-stretch: 118%;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+/* La cinta tricolor como marcador: 2 partes amarillo, 1 azul, 1 rojo */
+.tb-eyebrow::before {
+  content: ""; flex: none; width: 24px; height: 9px;
+  background: linear-gradient(180deg, var(--tb-amarillo) 0 50%, var(--tb-azul) 50% 75%, var(--tb-rojo) 75%);
+  clip-path: polygon(0 0, 100% 0, 82% 50%, 100% 100%, 0 100%);
+}
+.tb-mono { font-family: var(--font-mono); font-size: var(--fs-xs); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.tb-lead { font-size: var(--fs-md); color: var(--fg-muted); max-width: var(--measure); }
+
+/* ---- Cinta tricolor ----------------------------------------------------- */
+.tb-cinta { display: block; height: 6px; background: linear-gradient(180deg, var(--tb-amarillo) 0 50%, var(--tb-azul) 50% 75%, var(--tb-rojo) 75%); }
+
+/* ---- Filigrana (separador dorado) -------------------------------------- */
+.tb-filigrana { display: flex; align-items: center; gap: var(--sp-3); color: var(--accent); }
+.tb-filigrana::before, .tb-filigrana::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: .55; }
+.tb-filigrana svg { width: 92px; height: 22px; flex: none; }
+
+/* ---- Botones -----------------------------------------------------------
+   Placas con esquina cortada, como el filo de una daga. Al pasar el cursor
+   un reflejo de cromo cruza la placa. */
+.tb-btn {
+  --b-bg: var(--accent);
+  --b-fg: var(--accent-fg);
+  --b-bd: var(--accent);
+  position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-3);
+  min-height: 50px; padding: 0 var(--sp-5);
+  border: 0; background: var(--b-bd);
+  color: var(--b-fg);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+  font: 700 var(--fs-sm)/1 var(--font-body);
+  font-stretch: 112%;
+  letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--dur-pulso) ease, filter var(--dur-trazo) var(--ease-aguja);
+}
+.tb-btn::before { /* relleno interior: deja ver el borde de 1.5px */
+  content: ""; position: absolute; inset: 1.5px; z-index: -2; background: var(--b-bg);
+  clip-path: polygon(calc(var(--cut) - 1px) 0, 100% 0, 100% calc(100% - var(--cut) + 1px), calc(100% - var(--cut) + 1px) 100%, 0 100%, 0 calc(var(--cut) - 1px));
+}
+.tb-btn::after { /* reflejo de cromo */
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / .55), transparent);
+  transform: skewX(-18deg) translateX(0);
+  transition: transform var(--dur-sesion) var(--ease-aguja);
+}
+.tb-btn:hover::after, .tb-btn:focus-visible::after { transform: skewX(-18deg) translateX(420%); }
+.tb-btn:active { transform: translateY(1px) scale(.985); }
+.tb-btn svg { width: 18px; height: 18px; flex: none; }
+.tb-btn--ghost { --b-bg: var(--bg); --b-fg: var(--fg-strong); --b-bd: var(--line-strong); }
+.tb-btn--ghost:hover { --b-bd: var(--accent); }
+.tb-btn--stencil { --b-bg: var(--stencil); --b-fg: #fff; --b-bd: var(--stencil); }
+.tb-btn--dark { --b-bg: var(--tb-tinta); --b-fg: var(--tb-cromo); --b-bd: var(--tb-oro); }
+.tb-btn--sm { min-height: 38px; padding: 0 var(--sp-4); font-size: .72rem; --cut: 9px; gap: var(--sp-2); }
+.tb-btn--block { width: 100%; }
+
+/* ---- Chips: estilos de tatuaje / zonas ---------------------------------- */
+.tb-chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  min-height: 34px; padding: 0 var(--sp-3);
+  border: 1px solid var(--line-strong); border-radius: var(--r-filo);
+  background: transparent; color: var(--fg);
+  font: 500 var(--fs-sm)/1 var(--font-body);
+  cursor: pointer;
+  transition: border-color var(--dur-trazo) var(--ease-aguja), background var(--dur-trazo) var(--ease-aguja), color var(--dur-trazo) var(--ease-aguja);
+}
+.tb-chip:hover { border-color: var(--accent); }
+.tb-chip[aria-pressed="true"] { background: var(--fg-strong); color: var(--bg); border-color: var(--fg-strong); }
+.tb-chip__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--stencil); }
+
+.tb-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 9px 3px; border: 1px solid currentColor; border-radius: var(--r-filo);
+  font: 600 .68rem/1.3 var(--font-mono); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent);
+}
+.tb-badge--stencil { color: var(--stencil); }
+.tb-badge--solid { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+
+/* Sello de premio (círculo con texto curvo) */
+.tb-seal { width: 132px; aspect-ratio: 1; max-width: 100%; color: var(--accent); }
+.tb-seal text { font: 600 9.4px var(--font-mono); letter-spacing: 2.2px; fill: currentColor; text-transform: uppercase; }
+.tb-seal .tb-seal__n { font: 700 40px var(--font-display); letter-spacing: 0; }
+.tb-seal .tb-seal__spin { transform-origin: 60px 60px; animation: tb-spin 26s linear infinite; }
+@keyframes tb-spin { to { transform: rotate(360deg); } }
+
+/* ---- Placa / tarjeta ---------------------------------------------------- */
+.tb-card {
+  position: relative; display: flex; flex-direction: column; gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  min-width: 0;
+  transition: border-color var(--dur-trazo) var(--ease-aguja), transform var(--dur-trazo) var(--ease-aguja);
+}
+/* esquinas de hoja de flash */
+.tb-card::before, .tb-card::after { content: ""; position: absolute; width: 14px; height: 14px; border-color: var(--accent); border-style: solid; opacity: .8; pointer-events: none; }
+.tb-card::before { top: -1px; left: -1px; border-width: 1.5px 0 0 1.5px; }
+.tb-card::after { bottom: -1px; right: -1px; border-width: 0 1.5px 1.5px 0; }
+.tb-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.tb-card h3 { font-size: var(--fs-xl); line-height: 1; }
+.tb-card p { font-size: var(--fs-sm); color: var(--fg-muted); }
+.tb-card__meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-2); margin-top: auto; padding-top: var(--sp-3); border-top: 1px solid var(--line); }
+.tb-card__meta div { display: grid; gap: 2px; min-width: 0; }
+.tb-card__meta small { font: 500 .64rem/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-muted); }
+.tb-card__meta b { font: 600 var(--fs-sm)/1.2 var(--font-mono); color: var(--fg-strong); font-variant-numeric: tabular-nums; }
+.tb-card__icon { width: 52px; height: 52px; color: var(--accent); }
+
+/* ---- Formulario -------------------------------------------------------- */
+.tb-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.tb-field label, .tb-field .tb-label { font: 600 .72rem/1.2 var(--font-body); font-stretch: 115%; letter-spacing: .12em; text-transform: uppercase; color: var(--fg-strong); }
+.tb-hint { font-size: var(--fs-xs); color: var(--fg-muted); }
+.tb-input, .tb-select, .tb-textarea {
+  width: 100%; min-height: 48px; padding: 12px 14px;
+  border: 0; border-bottom: 1.5px solid var(--line-strong);
+  background: var(--surface-2); color: var(--fg-strong);
+  border-radius: var(--r-filo) var(--r-filo) 0 0;
+  font: 400 var(--fs-base)/1.4 var(--font-body);
+  transition: border-color var(--dur-trazo) var(--ease-aguja), background var(--dur-trazo) var(--ease-aguja);
+}
+.tb-textarea { min-height: 104px; resize: vertical; }
+.tb-input::placeholder, .tb-textarea::placeholder { color: var(--fg-muted); }
+.tb-input:focus, .tb-select:focus, .tb-textarea:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+.tb-input[aria-invalid="true"] { border-color: var(--alert); }
+.tb-error { color: var(--alert); font-size: var(--fs-xs); font-weight: 600; }
+.tb-range { -webkit-appearance: none; appearance: none; width: 100%; height: 26px; background: transparent; cursor: pointer; }
+.tb-range::-webkit-slider-runnable-track { height: 2px; background: var(--line-strong); }
+.tb-range::-moz-range-track { height: 2px; background: var(--line-strong); }
+.tb-range::-moz-range-progress { height: 2px; background: var(--accent); }
+.tb-range::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -8px; background: var(--accent); transform: rotate(45deg); border: 0; }
+.tb-range::-moz-range-thumb { width: 14px; height: 14px; background: var(--accent); transform: rotate(45deg); border: 0; border-radius: 0; }
+
+/* ---- Segmentado (tatuaje / piercing) ----------------------------------- */
+.tb-seg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; border: 1px solid var(--line-strong); padding: 3px; gap: 3px; }
+.tb-seg button { border: 0; background: transparent; color: var(--fg-muted); padding: 10px 16px; font: 600 .74rem/1 var(--font-body); font-stretch: 115%; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background var(--dur-trazo) var(--ease-aguja), color var(--dur-trazo) var(--ease-aguja); }
+.tb-seg button[aria-pressed="true"] { background: var(--fg-strong); color: var(--bg); }
+
+/* ---- Testimonio -------------------------------------------------------- */
+.tb-quote { position: relative; padding: var(--sp-6) var(--sp-5) var(--sp-5); border-top: 1px solid var(--accent); min-width: 0; }
+.tb-quote::before { content: "“"; position: absolute; top: -.32em; left: var(--sp-5); font: 600 4rem/1 var(--font-display); color: var(--accent); background: var(--quote-bg, var(--bg)); padding-inline: 8px; }
+.tb-quote blockquote { margin: 0; font: 500 var(--fs-lg)/1.3 var(--font-body); color: var(--fg-strong); font-stretch: 92%; }
+.tb-quote figcaption { margin-top: var(--sp-4); font: 500 var(--fs-xs)/1.4 var(--font-mono); color: var(--fg-muted); letter-spacing: .04em; }
+.tb-stars { color: var(--accent); letter-spacing: 2px; font-size: var(--fs-sm); }
+
+/* ---- Aviso ------------------------------------------------------------- */
+.tb-toast { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); background: var(--fg-strong); color: var(--bg); font-size: var(--fs-sm); box-shadow: var(--sh-2); clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut)); }
+.tb-toast svg { width: 20px; height: 20px; flex: none; color: var(--accent); }
+
+/* ---- Navegación ------------------------------------------------------- */
+.tb-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); padding: var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-4); background: color-mix(in srgb, var(--bg) 82%, transparent); border: 1px solid var(--line); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.tb-nav__links { display: flex; gap: var(--sp-5); font: 600 .74rem/1 var(--font-body); font-stretch: 115%; letter-spacing: .12em; text-transform: uppercase; }
+.tb-nav__links a { color: var(--fg); text-decoration: none; position: relative; padding-block: 6px; }
+.tb-nav__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-trazo) var(--ease-aguja); }
+.tb-nav__links a:hover::after, .tb-nav__links a[aria-current="true"]::after { transform: scaleX(1); }
+@media (max-width: 860px) { .tb-nav__links { display: none; } }
+
+/* ---- Lista de cuidados (checklist) ----------------------------------- */
+.tb-care { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.tb-care li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: var(--sp-4); padding-block: var(--sp-3); border-bottom: 1px solid var(--line); align-items: baseline; }
+.tb-care li b { font: 600 var(--fs-xs)/1.3 var(--font-mono); color: var(--accent); letter-spacing: .04em; }
+.tb-care li span { color: var(--fg); font-size: var(--fs-sm); }
+
+/* ---- Comparador stencil / tinta ------------------------------------- */
+.tb-stencil { position: relative; overflow: hidden; background: var(--tb-transfer); user-select: none; touch-action: pan-y; aspect-ratio: var(--ar, 1 / 1.07); max-width: 100%; }
+.tb-stencil canvas, .tb-stencil img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tb-stencil img { clip-path: inset(0 0 0 var(--split, 50%)); }
+.tb-stencil__line { position: absolute; top: 0; bottom: 0; left: var(--split, 50%); width: 2px; translate: -1px 0; background: var(--tb-oro); pointer-events: none; }
+.tb-stencil__knob { position: absolute; top: 50%; left: var(--split, 50%); translate: -50% -50%; width: 46px; height: 46px; background: var(--tb-oro); color: var(--tb-tinta); display: grid; place-items: center; pointer-events: none; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.tb-stencil__knob svg { width: 20px; height: 20px; }
+.tb-stencil__tag { position: absolute; bottom: 12px; padding: 5px 9px 4px; font: 600 .66rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; pointer-events: none; }
+.tb-stencil__tag--l { left: 12px; background: var(--tb-stencil-hondo); color: #fff; }
+.tb-stencil__tag--r { right: 12px; background: var(--tb-tinta); color: var(--tb-cromo); }
+.tb-stencil input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: ew-resize; }
+.tb-stencil input:focus-visible ~ .tb-stencil__knob { outline: 3px solid var(--focus); outline-offset: 4px; }
+
+/* ==========================================================================
+   Movimiento
+   Reglas: el movimiento imita el oficio. El stencil se traza antes de que
+   llegue la tinta; los sellos laten una vez; nada flota sin motivo.
+   ========================================================================== */
+.tb-draw path, .tb-draw circle, .tb-draw line { stroke-dasharray: var(--len, 400); stroke-dashoffset: 0; }
+.tb-draw.is-drawing path, .tb-draw.is-drawing circle, .tb-draw.is-drawing line { animation: tb-draw var(--dur-sesion) var(--ease-aguja) both; }
+@keyframes tb-draw { from { stroke-dashoffset: var(--len, 400); } to { stroke-dashoffset: 0; } }
+
+.tb-ink-fill { animation: tb-ink 900ms var(--ease-tinta) both; animation-delay: var(--delay, 0ms); }
+@keyframes tb-ink { from { fill-opacity: 0; } to { fill-opacity: 1; } }
+
+.tb-buzz:hover { animation: tb-buzz 90ms linear 6; }
+@keyframes tb-buzz { 0%,100% { translate: 0 0; } 25% { translate: .6px -.4px; } 50% { translate: -.5px .5px; } 75% { translate: .4px .3px; } }
+
+/* Brillo de cromo: un reflejo recorre el texto cromado (va dentro del recorte del texto) */
+.tb-chrome.tb-shine {
+  background-image: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / .95) 50%, transparent 58%), var(--chrome);
+  background-size: 280% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  animation: tb-shine 5.2s var(--ease-tinta) infinite;
+}
+@keyframes tb-shine { 0%, 55% { background-position: 120% 0, 0 0; } 100% { background-position: -20% 0, 0 0; } }
+
+.tb-rise { animation: tb-rise 900ms var(--ease-aguja) both; animation-delay: var(--delay, 0ms); }
+@keyframes tb-rise { from { transform: translateY(14px); opacity: .4; } to { transform: none; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .tb-draw.is-drawing path, .tb-draw.is-drawing circle, .tb-draw.is-drawing line,
+  .tb-ink-fill, .tb-buzz:hover, .tb-chrome.tb-shine, .tb-rise, .tb-seal .tb-seal__spin { animation: none !important; }
+  .tb-btn::after { display: none; }
+}

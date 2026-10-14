@@ -1,0 +1,87 @@
+/* ==========================================================================
+   THE BODY SHOP · Heros
+   Referencias: los estudios grandes de EE. UU. no usan eslogan. El titular
+   es el nombre del estudio y la foto es de personas, en blanco y negro.
+     · Retrato  ← Mark Mahoney's Shamrock Social Club (Los Ángeles)
+     · Taller   ← Bang Bang (Nueva York)
+   Cada hero vive dentro de .hx-wrap (container-type) para que su versión
+   móvil dependa del ancho del contenedor y funcione igual en la web y en
+   las vistas previas escaladas. Colores fijos: son dirección de arte.
+   ========================================================================== */
+.hx-wrap { container-type: inline-size; position: relative; }
+.hx { position: relative; isolation: isolate; overflow: hidden; height: 100%; min-height: inherit; color: #F2F1EE; background: #090909; font-family: var(--font-body); }
+.hx * { box-sizing: border-box; }
+.hx img { max-width: none; display: block; }
+.hx p { margin: 0; }
+.hx a { color: inherit; text-decoration: none; }
+
+/* Grano de película sobre las fotos */
+.hx__grain { position: absolute; inset: -50%; z-index: 3; pointer-events: none; opacity: .13; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: hx-grain 1s steps(4) infinite; }
+@keyframes hx-grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } }
+.hx__bw { filter: grayscale(1) contrast(1.18) brightness(.82); }
+
+/* Barra superior: logo a la izquierda, enlaces a la derecha */
+.hx__top { position: absolute; z-index: 5; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-start; padding: clamp(18px, 2.4cqw, 34px) clamp(18px, 4cqw, 60px); }
+.hx__mark { display: block; width: clamp(96px, 11.5cqw, 168px); aspect-ratio: 360 / 248; }
+.hx__mark svg { width: 100%; height: 100%; }
+.hx__links { display: flex; align-items: center; gap: clamp(18px, 2.6cqw, 40px); padding-top: 14px; font: 400 1.05rem/1 var(--font-body); letter-spacing: .01em; }
+.hx__links a { position: relative; }
+.hx__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.hx__links a:hover::after { transform: scaleX(1); }
+.hx__links .hx__book { padding: 10px 16px; border: 1px solid rgb(242 241 238 / .7); }
+.hx__links .hx__book::after { display: none; }
+.hx__links .hx__book:hover { background: #F2F1EE; color: #090909; }
+@container (max-width: 760px) { .hx__links a:not(.hx__book) { display: none; } .hx__links { padding-top: 6px; } .hx__links .hx__book { font-size: .9rem; } }
+
+/* ==========================================================================
+   Retrato · ref. Shamrock Social Club
+   Retrato en B/N del artista a la izquierda; el nombre en gótica gigante,
+   blanco, se monta sobre la foto a la derecha.
+   ========================================================================== */
+.hx--retrato .hx__photo { position: absolute; z-index: 0; top: 0; bottom: 0; left: 6%; width: 54%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 70%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 70%, transparent 100%); }
+.hx--retrato .hx__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, #090909 0%, transparent 26%); }
+.hx--retrato .hx__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 12%; }
+.hx--retrato .hx__name { position: absolute; z-index: 4; right: clamp(18px, 5cqw, 80px); top: 50%; translate: 0 -42%; margin: 0;
+  font: 400 clamp(5rem, 12.6cqw, 12.5rem)/.86 "UnifrakturMaguntia", var(--font-display); color: #F2F1EE; text-align: left; letter-spacing: -.005em;
+  text-shadow: 0 2px 30px rgb(0 0 0 / .45); }
+.hx--retrato .hx__name span { display: block; }
+.hx--retrato .hx__name span + span { padding-left: 1.05em; }
+.hx--retrato .hx__foot { position: absolute; z-index: 5; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 0 clamp(18px, 4cqw, 60px) clamp(18px, 2.6cqw, 34px); font: 500 .74rem/1.4 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: rgb(242 241 238 / .78); }
+.hx--retrato .hx__foot b { color: #F2F1EE; font-weight: 600; }
+.hx--retrato .hx__caption { text-align: right; letter-spacing: .08em; text-transform: none; color: rgb(242 241 238 / .55); }
+@container (max-width: 760px) {
+  .hx--retrato .hx__photo { left: 0; width: 100%; height: 74%; bottom: auto; -webkit-mask-image: none; mask-image: none; }
+  .hx--retrato .hx__photo::after { background: linear-gradient(0deg, #090909 0%, transparent 45%); }
+  .hx--retrato .hx__photo img { object-position: 64% 10%; }
+  .hx--retrato .hx__name { left: 18px; right: 18px; top: auto; bottom: 104px; translate: none; font-size: clamp(4rem, 22cqw, 6.2rem); }
+  .hx--retrato .hx__name span + span { padding-left: 0; text-align: right; }
+  .hx--retrato .hx__foot { flex-direction: column; align-items: flex-start; gap: 6px; font-size: .66rem; }
+  .hx--retrato .hx__caption { text-align: left; }
+}
+
+/* ==========================================================================
+   Taller · ref. Bang Bang NYC
+   Foto oscura del artista trabajando a sangre; monograma arriba al centro,
+   el nombre en mayúsculas condensadas y la dirección. Nada más.
+   ========================================================================== */
+.hx--taller .hx__photo { position: absolute; inset: 0; z-index: 0; }
+.hx--taller .hx__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 46%; filter: grayscale(1) contrast(1.15) brightness(.42); }
+.hx--taller .hx__photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 70% at 50% 50%, transparent 40%, rgb(0 0 0 / .55)); }
+.hx--taller .hx__top { justify-content: center; }
+.hx--taller .hx__mono { display: block; width: clamp(60px, 6.4cqw, 92px); aspect-ratio: 1; --mono-bg: transparent; --mono-fill: #F2F1EE; }
+.hx--taller .hx__mono svg { width: 100%; height: 100%; }
+.hx--taller .hx__center { position: absolute; z-index: 4; inset: 0; display: grid; place-content: center; justify-items: center; gap: clamp(22px, 3.4cqw, 48px); text-align: center; padding-inline: 16px; }
+.hx--taller .hx__name { margin: 0; font: 300 clamp(2.6rem, 6.4cqw, 5.6rem)/1 var(--font-body); font-stretch: 62%; letter-spacing: .2em; text-transform: uppercase; color: #F2F1EE; padding-left: .2em; }
+.hx--taller .hx__addr { font: 400 clamp(.78rem, 1.1cqw, .95rem)/1.4 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: rgb(242 241 238 / .85); }
+.hx--taller .hx__hours { position: absolute; z-index: 5; left: 0; right: 0; bottom: clamp(18px, 2.6cqw, 34px); text-align: center; font: 400 .7rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: rgb(242 241 238 / .55); }
+.hx--taller .hx__links { position: absolute; z-index: 6; right: clamp(18px, 4cqw, 60px); top: clamp(18px, 2.4cqw, 34px); }
+@container (max-width: 760px) {
+  .hx--taller .hx__photo img { object-position: 74% 40%; }
+  .hx--taller .hx__name { font-size: clamp(2.2rem, 12.4cqw, 3.2rem); letter-spacing: .14em; }
+  .hx--taller .hx__links { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .hx__grain { animation: none; } }
